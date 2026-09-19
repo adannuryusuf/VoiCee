@@ -1,0 +1,116 @@
+/* Layout for the top hero banner card */
+.home-hero-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    margin-bottom: 28px;
+}
+
+.hero-text-side {
+    flex: 1.2;
+}
+
+.hero-text-side h2 {
+    font-size: 22px;
+    color: #111;
+    margin-bottom: 12px;
+}
+
+.hero-text-side p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+/* Call to action button grouping */
+.hero-button-group {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.home-cta-link {
+    text-decoration: none;
+    display: inline-block;
+}
+
+.home-secondary-link {
+    display: inline-block;
+    padding: 13px 20px;
+    border: 1px solid #005f3e;
+    border-radius: 8px;
+    background-color: white;
+    color: #005f3e;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.home-secondary-link:hover {
+    background-color: #f2f7f4;
+}
+
+/* Hero image container and sizing */
+.hero-image-side {
+    flex: 0.8;
+    display: flex;
+    justify-content: center;
+}
+
+.home-banner-img {
+    width: 100%;
+    max-height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 1px solid #e2e8e2;
+}
+
+/* 3-column steps cards container */
+.home-steps-grid {
+    display: flex;
+    gap: 20px;
+}
+
+.step-card {
+    flex: 1;
+    padding: 24px 20px;
+}
+
+/* Blue badge showing step number */
+.step-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    background-color: #e6f2ff;
+    color: #0077ff;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 4px;
+    margin-bottom: 12px;
+}
+
+.step-card h3 {
+    font-size: 16px;
+    color: #222;
+    margin-bottom: 8px;
+}
+
+.step-card p {
+    font-size: 13px;
+    color: #707070;
+    line-height: 1.5;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 820px) {
+    .home-hero-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .home-steps-grid {
+        flex-direction: column;
+    }
+}
