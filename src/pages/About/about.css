@@ -1,0 +1,92 @@
+/* Container for the 2-column layout */
+.about-columns-container {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+}
+
+/* Left main content block */
+.about-content-card {
+    flex: 1.4;
+}
+
+/* Right side contacts block */
+.about-contact-card {
+    flex: 0.9;
+}
+
+.about-card-title {
+    font-size: 18px;
+    color: #111;
+    margin-bottom: 12px;
+}
+
+.about-text-body {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Bullet list styling */
+.about-list {
+    padding-left: 20px;
+    font-size: 14px;
+    color: #555;
+    line-height: 1.8;
+}
+
+.about-list strong {
+    color: #222;
+}
+
+/* Contact box styles */
+.contact-card-title {
+    font-size: 16px;
+    color: #005f3e;
+    margin-bottom: 8px;
+}
+
+.contact-card-subtitle {
+    font-size: 13px;
+    color: #707070;
+    line-height: 1.5;
+    margin-bottom: 16px;
+}
+
+.contact-details-list {
+    margin-bottom: 18px;
+}
+
+.contact-detail-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #edf1ed;
+    font-size: 13px;
+}
+
+.contact-detail-row:last-child {
+    border-bottom: none;
+}
+
+.contact-title {
+    font-weight: bold;
+    color: #333;
+}
+
+.contact-info {
+    color: #555;
+}
+
+/
+.about-tip-box {
+    margin-bottom: 0;
+    margin-top: 8px;
+}
+
+/* Mobile responsive collapse */
+@media (max-width: 820px) {
+    .about-columns-container {
+        flex-direction: column;
+    }
+}
