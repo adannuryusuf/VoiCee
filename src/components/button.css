@@ -1,0 +1,53 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-family: "Outfit:Bold", sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  border: none;
+  transition: opacity 0.15s;
+  white-space: nowrap;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+.btn-primary {
+  background: #006b3f;
+  color: white;
+}
+
+.btn-red {
+  background: #bb1a34;
+  color: white;
+}
+
+.btn-outline {
+  background: white;
+  color: #1a1a1a;
+  border: 1px solid #1a1a1a;
+}
+
+.btn-outline-muted {
+  background: white;
+  color: #64748b;
+  border: 1px solid #64748b;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: #bb1a34;
+  text-decoration: underline;
+  padding: 8px 0;
+}

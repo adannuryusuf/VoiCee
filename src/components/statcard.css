@@ -1,0 +1,33 @@
+.stat-card {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+  flex: 1;
+  min-width: 0;
+}
+
+.stat-card-label {
+  font-family: "Geist:SemiBold", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: #64748b;
+}
+
+.stat-card-value {
+  font-family: "Outfit:ExtraBold", sans-serif;
+  font-weight: 800;
+  font-size: 32px;
+  color: #1a1a1a;
+}
+
+.stat-card-desc {
+  font-family: "Geist:Regular", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  color: #64748b;
+}
