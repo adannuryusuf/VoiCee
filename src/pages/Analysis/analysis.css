@@ -1,0 +1,423 @@
+/* ── MAIN CONTENT AREA ────────────────────────────────── */
+
+.analysis-main {
+  width: 100%;
+  padding: 0 24px 60px;
+  box-sizing: border-box;
+}
+
+.analysis-content-wrapper {
+  width: 100%;
+  max-width: 1020px;
+  margin: 0 auto;
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+/* ── PAGE HEADER ──────────────────────────────────────── */
+
+.analysis-page-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.analysis-page-header h1 {
+  margin: 0 0 6px;
+  font-size: 30px;
+  font-weight: 700;
+  color: #171a21;
+  line-height: 1.2;
+}
+
+.analysis-page-header p {
+  margin: 0;
+  font-size: 13px;
+  color: #718198;
+  line-height: 1.5;
+}
+
+/* Back link to Community Dashboard */
+.analysis-community-btn {
+  flex-shrink: 0;
+  padding: 10px 18px;
+  background: white;
+  color: #171a21;
+  border: 1px solid #d0d8d8;
+  border-radius: 6px;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+  white-space: nowrap;
+}
+
+.analysis-community-btn:hover {
+  background: #f0f4f2;
+}
+
+/* ── STAT CARDS ROW ───────────────────────────────────── */
+
+.analysis-stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.analysis-stat-card {
+  background: white;
+  border: 1px solid #e2e8ed;
+  border-radius: 9px;
+  padding: 18px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-sizing: border-box;
+}
+
+.analysis-stat-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #718198;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.analysis-stat-value {
+  font-size: 30px;
+  font-weight: 700;
+  color: #171a21;
+  line-height: 1;
+}
+
+.analysis-stat-green { color: #006b3f; }
+.analysis-stat-amber  { color: #a05a00; }
+
+/* ── CHARTS GRID ──────────────────────────────────────── */
+
+/* Two charts sit side by side on desktop */
+.analysis-charts-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+/* Card used for each chart section */
+.analysis-chart-card {
+  background: white;
+  border: 1px solid #e2e8ed;
+  border-radius: 9px;
+  padding: 22px 20px;
+  box-sizing: border-box;
+}
+
+/* Full-width card (used for the county breakdown) */
+.analysis-full-width {
+  width: 100%;
+}
+
+.analysis-chart-title {
+  margin: 0 0 16px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #171a21;
+}
+
+/* Message shown when no data is available */
+.analysis-empty {
+  color: #9aabb0;
+  font-size: 13px;
+  margin: 0;
+}
+
+/* ── HORIZONTAL BAR CHART ─────────────────────────────── */
+
+.analysis-bar-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.analysis-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Label on the left side of each bar */
+.analysis-bar-label {
+  width: 150px;
+  flex-shrink: 0;
+  font-size: 11px;
+  color: #4a5568;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* The grey background track for the bar */
+.analysis-bar-track {
+  flex: 1;
+  height: 10px;
+  background: #eef1f4;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+/* The green filled portion of the bar */
+.analysis-bar-fill {
+  height: 100%;
+  background: #006b3f;
+  border-radius: 5px;
+  transition: width 0.3s ease;
+  min-width: 4px; /* Always show a tiny sliver for non-zero values */
+}
+
+/* Numeric count on the right of the bar */
+.analysis-bar-count {
+  width: 24px;
+  flex-shrink: 0;
+  font-size: 12px;
+  font-weight: 700;
+  color: #006b3f;
+  text-align: right;
+}
+
+/* ── STATUS BREAKDOWN ─────────────────────────────────── */
+
+.analysis-status-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.analysis-status-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Row with dot + name + count */
+.analysis-status-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Coloured dot indicator */
+.analysis-status-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.analysis-dot-blue  { background: #2563eb; }
+.analysis-dot-amber { background: #d97706; }
+.analysis-dot-green { background: #006b3f; }
+
+.analysis-status-name {
+  flex: 1;
+  font-size: 13px;
+  color: #4a5568;
+}
+
+.analysis-status-count {
+  font-size: 13px;
+  font-weight: 700;
+  color: #171a21;
+}
+
+/* Grey track for status bars */
+.analysis-status-bar-track {
+  height: 8px;
+  background: #eef1f4;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+/* Filled status bar */
+.analysis-status-bar {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+  min-width: 4px;
+}
+
+.analysis-bar-blue  { background: #2563eb; }
+.analysis-bar-amber { background: #d97706; }
+.analysis-bar-green { background: #006b3f; }
+
+/* Resolution rate summary below the bars */
+.analysis-resolution-summary {
+  margin-top: 6px;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.analysis-resolution-pct {
+  font-size: 26px;
+  font-weight: 700;
+  color: #006b3f;
+}
+
+.analysis-resolution-label {
+  font-size: 13px;
+  color: #718198;
+}
+
+/* ── COUNTY GRID ──────────────────────────────────────── */
+
+/* Two-column grid of county bars */
+.analysis-county-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 24px;
+}
+
+.analysis-county-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.analysis-county-rank {
+  width: 28px;
+  flex-shrink: 0;
+  font-size: 11px;
+  color: #9aabb0;
+  font-weight: 600;
+}
+
+.analysis-county-name {
+  width: 100px;
+  flex-shrink: 0;
+  font-size: 12px;
+  color: #4a5568;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.analysis-county-track {
+  flex: 1;
+}
+
+/* ── BOTTOM NOTE ──────────────────────────────────────── */
+
+.analysis-note {
+  background: #edf7f1;
+  border: 1px solid #c4ddd0;
+  border-radius: 9px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.analysis-note p {
+  margin: 0;
+  font-size: 12px;
+  color: #3d6b52;
+  line-height: 1.5;
+  flex: 1;
+}
+
+.analysis-note-btn {
+  flex-shrink: 0;
+  padding: 9px 18px;
+  background: #006b3f;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.analysis-note-btn:hover {
+  background: #005030;
+}
+
+/* ── TABLET ───────────────────────────────────────────── */
+
+@media (max-width: 900px) {
+
+  .analysis-stats-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .analysis-charts-row {
+    grid-template-columns: 1fr;
+  }
+
+  .analysis-page-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* ── MOBILE ───────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+
+  .analysis-main {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .analysis-page-header h1 {
+    font-size: 26px;
+  }
+
+  .analysis-bar-label {
+    width: 110px;
+  }
+
+  .analysis-county-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .analysis-county-name {
+    width: 90px;
+  }
+}
+
+/* ── SMALL PHONES ─────────────────────────────────────── */
+
+@media (max-width: 600px) {
+
+  .analysis-stats-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .analysis-stat-value {
+    font-size: 26px;
+  }
+
+  .analysis-bar-label {
+    width: 90px;
+    font-size: 10px;
+  }
+
+  .analysis-note {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .analysis-note-btn {
+    width: 100%;
+    text-align: center;
+  }
+}

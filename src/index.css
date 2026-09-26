@@ -1,312 +1,165 @@
-@import url('https://googleapis.com');
+/* =========================================================
+   VoiCee - Global Styles
+   ========================================================= */
 
-* {
+/* ---------------------------------------------------------
+   1. Global box sizing and browser reset
+   --------------------------------------------------------- */
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  letter-spacing: -0.01em;
 }
+
+
+/* ---------------------------------------------------------
+   2. HTML and application root
+   --------------------------------------------------------- */
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* ---------------------------------------------------------
+   3. Body
+   --------------------------------------------------------- */
 
 body {
   background-color: #ffffff;
-  padding-top: 60px;
+  color: #222222;
+
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', sans-serif;
+
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+
+  /* Prevent unwanted horizontal scrolling */
+  overflow-x: hidden;
 }
+
+
+/* ---------------------------------------------------------
+   4. Application container
+   --------------------------------------------------------- */
+
+#root {
+  width: 100%;
+  min-height: 100vh;padding-top: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* ---------------------------------------------------------
+   5. Headings
+   --------------------------------------------------------- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: inherit;
+  line-height: 1.2;
+}
+
+
+/* ---------------------------------------------------------
+   6. Paragraphs
+   --------------------------------------------------------- */
+
+p {
+  line-height: 1.6;
+}
+
+
+/* ---------------------------------------------------------
+   7. Links
+   --------------------------------------------------------- */
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+/* ---------------------------------------------------------
+   8. Images
+   --------------------------------------------------------- */
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+
+/* ---------------------------------------------------------
+   9. Buttons and form controls
+   --------------------------------------------------------- */
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+
+/* ---------------------------------------------------------
+   10. Buttons
+   --------------------------------------------------------- */
+
+button {
+  cursor: pointer;
+}
+
+
+/* ---------------------------------------------------------
+   11. Remove default list styling
+   --------------------------------------------------------- */
+
+ul,
+ol {
+  list-style: none;
+}
+
+
+/* ---------------------------------------------------------
+   12. Accessible keyboard focus
+   --------------------------------------------------------- */
+
+:focus-visible {
+  outline: 3px solid #007a43;
+  outline-offset: 2px;
+}
+
+
+/* ---------------------------------------------------------
+   13. Prevent buttons from looking disabled when disabled
+   --------------------------------------------------------- */
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+
+/* ---------------------------------------------------------
+   14. Shared VoiCee page container
+   --------------------------------------------------------- */
 
 .voicee-container {
   width: 100%;
   min-height: 100vh;
-}
-
-/* Locked Header Navbar Alignment Rules */
-.voicee-header {
-  background-color: #005f3e;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 10%;
-  height: 60px;
-  color: #ffffff;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 9999;
-}
-
-.header-logo {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 1.25rem;
-  font-weight: 700;
-}
-
-.header-nav {
-  display: flex;
-  gap: 24px;
-  height: 100%;
-}
-
-.header-nav a {
-  color: #a3cfbe;
-  text-decoration: none;
-  font-size: 0.85rem;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  height: 100%;
-  border-bottom: 3px solid transparent;
-}
-
-.header-nav a.active {
-  color: #ffffff;
-  border-bottom-color: #ff4a4a;
-}
-
-/* Form Container Workspace Grid definitions */
-.form-wrapper {
-  max-width: 1140px;
-  margin: 0 auto;
-  padding: 40px 10%;
-}
-
-.breadcrumb {
-  font-size: 0.75rem;
-  color: #8c8c8c;
-  margin-bottom: 24px;
-}
-
-.form-main-title {
-  font-size: 2rem;
-  font-weight: 800;
-  color: #111111;
-  margin-bottom: 8px;
-}
-
-.form-subtitle {
-  color: #707070;
-  font-size: 0.9rem;
-  margin-bottom: 32px;
-}
-
-/* Base Panel Card Layout Container */
-.complaint-card {
-  background-color: #f8faf8;
-  border: 1px solid #edf1ed;
-  border-radius: 16px;
-  padding: 40px;
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
-}
-
-.form-row {
-  display: flex;
-  gap: 24px;
-}
-
-.form-group {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.form-group.full-width {
-  width: 100%;
-}
-
-.form-group label {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: #222222;
-}
-
-/* Inputs Structure Setup */
-.input-with-icon {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-.input-with-icon input,
-.select-wrapper select,
-.form-group textarea {
-  width: 100%;
-  padding: 13px 16px;
-  border: 1px solid #e2e8e2;
-  border-radius: 8px;
-  font-size: 0.85rem;
-  background-color: #ffffff;
-  color: #333333;
-  outline: none;
-}
-
-.input-with-icon input::placeholder,
-.form-group textarea::placeholder {
-  color: #a0aaa0;
-}
-
-.input-svg-icon {
-  position: absolute;
-  right: 16px;
-  color: #8c968c;
-  display: flex;
-  align-items: center;
-  pointer-events: none;
-}
-
-/* Customized Dropdown arrows */
-.select-wrapper {
-  position: relative;
-}
-
-.select-wrapper select {
-  appearance: none;
-  -webkit-appearance: none;
-  padding-right: 40px;
-}
-
-.select-wrapper::after {
-  content: "";
-  position: absolute;
-  right: 18px;
-  top: 50%;
-  width: 6px;
-  height: 6px;
-  border-right: 2px solid #4a554a;
-  border-bottom: 2px solid #4a554a;
-  transform: translateY(-70%) rotate(45deg);
-  pointer-events: none;
-}
-
-.form-group textarea {
-  resize: none;
-}
-
-/* Information AI Helper Message Banner Box rules */
-.ai-banner {
-  background-color: #e6f2ff;
-  border: 1px solid #d4e8ff;
-  border-radius: 10px;
-  padding: 16px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.ai-left-side {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.ai-icon-bg {
-  background-color: #0077ff;
-  color: #ffffff;
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.ai-text strong {
-  font-size: 0.85rem;
-  color: #0044cc;
-  display: block;
-  margin-bottom: 2px;
-}
-
-.ai-text p {
-  font-size: 0.8rem;
-  color: #3377ff;
-}
-
-/* Custom Sliding Toggle Mechanism */
-.toggle-switch {
-  position: relative;
-  display: inline-block;
-  width: 44px;
-  height: 24px;
-}
-
-.toggle-switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.slider-round {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #cbd5e1;
-  transition: 0.2s;
-  border-radius: 24px;
-}
-
-.slider-round::before {
-  position: absolute;
-  content: "";
-  height: 18px;
-  width: 18px;
-  left: 3px;
-  bottom: 3px;
-  background-color: white;
-  transition: 0.2s;
-  border-radius: 50%;
-}
-
-.toggle-switch input:checked + .slider-round {
-  background-color: #005f3e;
-}
-
-.toggle-switch input:checked + .slider-round::before {
-  transform: translateX(20px);
-}
-
-/* Bottom Actions Control Row Layout */
-.form-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 8px;
-}
-
-.terms-text {
-  font-size: 0.8rem;
-  color: #7a857a;
-  max-width: 55%;
-  line-height: 1.5;
-}
-
-.submit-btn {
-  background-color: #005f3e;
-  color: #ffffff;
-  border: none;
-  padding: 14px 24px;
-  font-size: 0.85rem;
-  font-weight: 700;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-.submit-btn:hover {
-  background-color: #00462d;
-}
-
-@media (max-width: 768px) {
-  .form-row {
-    flex-direction: column;
-    gap: 24px;
-  }
-  .form-wrapper {
-    padding: 20px 5%;
-  }
 }

@@ -1,117 +1,262 @@
 import React from "react";
-import { FaBullhorn } from "react-icons/fa";
-// Import local CSS file for styling
+
 import "./about.css";
 
+
 function About() {
-    // Department contact listings displayed in the side panel
-    const contactDirectory = [
-        { label: "Help Desk", value: "+254 700 123 456" },
-        { label: "Email Support", value: "complaints@voicee.go.ke" },
-        { label: "Regional Coverage", value: "        All 47 County Governments" },
-        { label: "Operating Hours", value: "24/7" }
+
+    // Handles moving between the different pages
+    const navigate = (page) => {
+        window.location.hash = page;
+    };
+
+
+    // Stores the steps used to explain how VoiCee works
+    const workSteps = [
+        {
+            number: "01",
+            title: "Submit Your Complaint",
+            description:
+                "Describe the issue you are facing with any public service or government department. Provide clear details so your complaint can be addressed."
+        },
+        {
+            number: "02",
+            title: "AI Suggests the Right Department",
+            description:
+                "VoiCee uses AI to analyse your complaint and suggest the most relevant government department. This helps your complaint reach the right people faster."
+        },
+        {
+            number: "03",
+            title: "Review and Confirm",
+            description:
+                "You review the AI suggestion and make the final decision. You can confirm the department, choose a different one, or edit your complaint before submitting."
+        },
+        {
+            number: "04",
+            title: "Track Your Complaint",
+            description:
+                "Once submitted, you receive a unique reference number. Use it to track progress and follow up."
+        }
     ];
 
+
     return (
-        <div className="voicee-container">
-            
-            {/* Top Navigation Bar */}
-            <header className="voicee-header">
-                <div className="header-logo">
-                    <div className="logo-icon">
-                        <FaBullhorn />
+        <div className="voicee-about-page">
+
+
+            {/* Main content of the About page */}
+            <main className="about-main">
+
+                <div className="about-content-wrapper">
+
+                    {/* Shows where the user is on the website */}
+                    <div className="about-breadcrumb">
+
+                        <span>Home</span>
+
+                        <span className="about-breadcrumb-arrow">
+                            &gt;
+                        </span>
+
+                        <strong>About</strong>
+
                     </div>
-                    <span>VoiCee</span>
-                </div>
 
-                <nav className="header-nav">
-                    <a href="#home">Home</a>
-                    <a href="#submit">Submit Complaint</a>
-                    <a href="#analysis">Community Analysis</a>
-                    {/* Active class keeps the red underline on About */}
-                    <a href="#about" className="active">About</a>
-                </nav>
-            </header>
 
-            {/* Main content wrapper */}
-            <main className="form-wrapper">
-                
-                <div className="breadcrumb">
-                    Home &gt; About VoiCee
-                </div>
+                    {/* About page title and introduction */}
+                    <section className="about-page-heading">
 
-                <h1 className="form-main-title">
-                    About the VoiCee Initiative
-                </h1>
+                        <h1>
+                            About VoiCee
+                        </h1>
 
-                <p className="form-subtitle">
-                    A transparent public bridge between citizen reports and government actions.
-                </p>
-
-                {/* Two column split matching the clean form layout */}
-                <div className="about-columns-container">
-                    
-                    {/* Left larger card: Mission and Principles */}
-                    <div className="complaint-card about-content-card">
-                        <h2 className="about-card-title">Our Purpose</h2>
-                        <p className="about-text-body">
-                            VoiCee is built to simplify how citizens raise civic concerns. 
-                            Instead of traveling to county offices or making repeated phone calls, 
-                            residents can log public service breakdowns online and track responses openly.
+                        <p>
+                            Giving every Kenyan citizen a voice.
                         </p>
 
-                        <h2 className="about-card-title" style={{ marginTop: "24px" }}>
-                            Community Guidelines
+                    </section>
+
+
+                    {/* Explains the main purpose of VoiCee */}
+                    <section className="about-mission-card">
+
+                        <div className="about-mission-content">
+
+                            <h2>
+                                Our Mission
+                            </h2>
+
+                            <p>
+                                VoiCee is a civic complaint and public feedback
+                                platform built for Kenyan citizens. Our mission
+                                is to make it easy for ordinary people to raise
+                                concerns about public services and government
+                                departments - and to hold those departments
+                                accountable. Every citizen deserves to be heard,
+                                and every complaint deserves a response.
+                            </p>
+
+                        </div>
+
+
+                        <div className="about-how-box">
+
+                            <h3>
+                                How it works
+                            </h3>
+
+                            <p>
+                                You report an issue, AI suggests the right
+                                department, and you track progress until it is
+                                resolved.
+                            </p>
+
+                        </div>
+
+                    </section>
+
+
+                    {/* TAKES YOU TO THE ABOUT PAGE AND YOU SEE HOW IT ACTUALLY WORKS(USER GUIDELINE) */}
+                    <section className="about-work-section">
+
+                        <h2 className="about-section-title">
+                            How VoiCee Works
                         </h2>
-                        
-                        <ul className="about-list">
-                            <li>
-                                <strong>Be Specific:</strong> Provide recognizable landmarks, street names, and exact county boundaries.
-                            </li>
-                            <li>
-                                <strong>Pick the Best Category:</strong> Selecting the proper sector ensures your report reaches the correct desk quickly.
-                            </li>
-                            <li>
-                                <strong>Respectful Communication:</strong> Clear, professional descriptions help public officers prioritize urgent repairs.
-                            </li>
-                        </ul>
-                    </div>
 
-                    {/* Right card: Official contacts and office details */}
-                    <div className="complaint-card about-contact-card">
-                        <h3 className="contact-card-title">Inquiries &amp; Support</h3>
-                        <p className="contact-card-subtitle">
-                            For technical assistance or direct departmental inquiries:
+
+                        <div className="about-work-grid">
+
+                            {workSteps.map((step) => (
+
+                                <article
+                                    className="about-work-card"
+                                    key={step.number}
+                                >
+
+                                    <span className="about-work-number">
+                                        {step.number}
+                                    </span>
+
+
+                                    <h3>
+                                        {step.title}
+                                    </h3>
+
+
+                                    <p>
+                                        {step.description}
+                                    </p>
+
+                                </article>
+
+                            ))}
+
+                        </div>
+
+                    </section>
+
+
+                    {/* Gives more information about VoiCee features */}
+                    <section className="about-information-grid">
+
+                        {/* Explains the AI suggestion feature */}
+
+                        <article className="about-information-card">
+
+                            <div className="about-information-title">
+
+                                <span className="about-information-icon about-ai-icon">
+                                    ⚙
+                                </span>
+
+                                <h3>
+                                    About AI Suggestions
+                                </h3>
+
+                            </div>
+
+
+                            <p>
+                                VoiCee uses artificial intelligence to read your
+                                complaint and match it to the most appropriate
+                                government department. The AI looks at keywords,
+                                context, and past complaints to make its
+                                suggestion. You always have the final say -
+                                VoiCee AI is a helpful guide, not a
+                                decision-maker.
+                            </p>
+
+                        </article>
+
+
+                        {/* Explains the community analysis feature */}
+
+                        <article className="about-information-card">
+
+                            <div className="about-information-title">
+
+                                <span className="about-information-icon about-community-icon">
+                                    ◉
+                                </span>
+
+                                <h3>
+                                    Community Analysis
+                                </h3>
+
+                            </div>
+
+
+                            <p>
+                                VoiCee believes in transparency and public
+                                accountability. The Community Dashboard shows
+                                what issues Kenyans are raising, which
+                                departments receive the most complaints, and how
+                                quickly issues are being resolved. No personal
+                                information is shared. All data is anonymised to
+                                protect citizen privacy.
+                            </p>
+
+                        </article>
+
+                    </section>
+
+
+                    {/* Contact information for users who need help */}
+                    <section className="about-contact-section">
+
+                        <h2>
+                            Contact Us
+                        </h2>
+
+
+                        <p>
+                            Have questions or need help? Reach out to us at
+                            support@voicee.co.ke
                         </p>
 
-                        {/* Rendering contact entries */}
-                        <div className="contact-details-list">
-                            {contactDirectory.map((item, index) => (
-                                <div key={index} className="contact-detail-row">
-                                    <span className="contact-title">{item.label}:</span>
-                                    <span className="contact-info">{item.value}</span>
-                                </div>
-                            ))}
-                        </div>
 
-                        {/* Blue info banner reusing the teammate's ai-banner design */}
-                        <div className="ai-banner about-tip-box">
-                            <div className="ai-left-side">
-                                <div className="ai-icon-bg">💡</div>
-                                <div className="ai-text">
-                                    <strong>Privacy Protection</strong>
-                                    <p>Your contact details are protected under national data privacy guidelines.</p>
-                                </div>
-                            </div>
-                        </div>
+                        <p className="about-support-email">
 
-                    </div>
+                            <strong>
+                                Support email:
+                            </strong>
+
+                            <span>
+                                support@voicee.co.ke
+                            </span>
+
+                        </p>
+
+                    </section>
 
                 </div>
 
             </main>
+
+
         </div>
     );
 }
+
 
 export default About;

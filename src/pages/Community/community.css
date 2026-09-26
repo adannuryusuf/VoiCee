@@ -1,0 +1,438 @@
+/* =========================================================
+   VOICEE COMMUNITY
+   ========================================================= */
+
+/* ── MAIN CONTENT AREA ────────────────────────────────── */
+
+.community-main {
+  width: 100%;
+  padding: 0 24px 60px;
+  box-sizing: border-box;
+}
+
+/* Centers content and limits max width on wide screens */
+.community-content-wrapper {
+  width: 100%;
+  max-width: 1020px;
+  margin: 0 auto;
+  padding-top: 30px;
+}
+
+/* ── PAGE HEADER */
+
+.community-page-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 26px;
+  flex-wrap: wrap;
+}
+
+.community-header-text h1 {
+  margin: 0 0 6px;
+  font-size: 30px;
+  font-weight: 700;
+  color: #171a21;
+  line-height: 1.2;
+}
+
+.community-header-text p {
+  margin: 0;
+  font-size: 13px;
+  color: #718198;
+  line-height: 1.5;
+}
+
+/* The "Submit a Complaint" button in the header */
+.community-submit-btn {
+  flex-shrink: 0;
+  padding: 11px 20px;
+  background: #d3193d;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+
+.community-submit-btn:hover {
+  background: #b91434;
+}
+
+/* ── STATISTICS ROW */
+
+/* Four quick-stat cards laid out in a row */
+.community-stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.community-stat-card {
+  background: white;
+  border: 1px solid #e2e8ed;
+  border-radius: 9px;
+  padding: 18px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-sizing: border-box;
+}
+
+.community-stat-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #718198;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.community-stat-value {
+  font-size: 30px;
+  font-weight: 700;
+  color: #171a21;
+  line-height: 1;
+}
+
+/* Green number for the "Resolved" stat */
+.community-stat-green {
+  color: #006b3f;
+}
+
+/* ── FILTER AND SEARCH BAR*/
+
+.community-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+/* Row of category filter buttons */
+.community-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  flex: 1;
+}
+
+/* Individual filter button */
+.community-filter-btn {
+  padding: 6px 14px;
+  background: white;
+  border: 1px solid #d8e0d8;
+  border-radius: 20px;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  color: #4a5568;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.community-filter-btn:hover {
+  border-color: #006b3f;
+  color: #006b3f;
+}
+
+/* Active filter button has a solid green background */
+.community-filter-btn.active {
+  background: #006b3f;
+  border-color: #006b3f;
+  color: white;
+  font-weight: 700;
+}
+
+/* Search text input */
+.community-search {
+  padding: 9px 14px;
+  background: white;
+  border: 1px solid #d8e0d8;
+  border-radius: 6px;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  color: #171a21;
+  outline: none;
+  min-width: 220px;
+  max-width: 300px;
+  box-sizing: border-box;
+}
+
+.community-search:focus {
+  border-color: #006b3f;
+}
+
+.community-search::placeholder {
+  color: #9aabb0;
+}
+
+/* ── COMPLAINTS LIST ──────────────────────────────────── */
+
+.community-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Individual complaint card */
+.community-complaint-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: white;
+  border: 1px solid #e2e8ed;
+  border-radius: 9px;
+  padding: 18px 20px;
+  cursor: pointer;
+  transition: box-shadow 0.15s ease, border-color 0.15s ease;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.community-complaint-card:hover {
+  border-color: #b8d4c4;
+  box-shadow: 0 3px 12px rgba(0, 107, 63, 0.08);
+}
+
+/* Left side: all the complaint text */
+.community-complaint-main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Top row inside a card: status badge + reference number */
+.community-complaint-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Status badge — colour overrides below */
+.community-status {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.community-status-submitted {
+  background: #e8f0fd;
+  color: #1a4a9e;
+}
+
+.community-status-review {
+  background: #fff3cd;
+  color: #7a4f00;
+}
+
+.community-status-resolved {
+  background: #e8f6ec;
+  color: #1a6b36;
+}
+
+/* Reference number (e.g. VOI-2026-001234) */
+.community-complaint-ref {
+  font-size: 10px;
+  color: #d3193d;
+  font-weight: 600;
+  background: #fff0f3;
+  padding: 3px 8px;
+  border-radius: 10px;
+  white-space: nowrap;
+}
+
+/* Complaint title */
+.community-complaint-title {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: #1d232b;
+  line-height: 1.35;
+  /* Prevent very long titles from breaking the layout */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* County • Category • Date meta row */
+.community-complaint-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #718198;
+  flex-wrap: wrap;
+}
+
+.community-meta-dot {
+  color: #c4cbd4;
+}
+
+/* Department name */
+.community-complaint-dept {
+  margin: 0;
+  font-size: 12px;
+  color: #006b3f;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Right side: vote count + chevron */
+.community-complaint-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.community-complaint-votes {
+  font-size: 12px;
+  color: #718198;
+  white-space: nowrap;
+}
+
+.community-complaint-arrow {
+  font-size: 22px;
+  color: #b0bbc8;
+  line-height: 1;
+}
+
+/* ── EMPTY STATE ──────────────────────────────────────── */
+
+/* Shown when no complaints match the current filter or search */
+.community-empty {
+  padding: 60px 24px;
+  text-align: center;
+  background: white;
+  border: 1px solid #e2e8ed;
+  border-radius: 9px;
+}
+
+.community-empty-title {
+  margin: 0 0 8px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #171a21;
+}
+
+.community-empty-sub {
+  margin: 0 0 20px;
+  font-size: 13px;
+  color: #718198;
+  line-height: 1.5;
+}
+
+.community-empty-btn {
+  padding: 11px 22px;
+  background: #d3193d;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.community-empty-btn:hover {
+  background: #b91434;
+}
+
+/* ── TABLET ───────────────────────────────────────────── */
+
+@media (max-width: 900px) {
+
+  .community-stats-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .community-page-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .community-submit-btn {
+    align-self: flex-start;
+  }
+}
+
+/* ── MOBILE ───────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+
+  .community-main {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .community-header-text h1 {
+    font-size: 26px;
+  }
+
+  .community-controls {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .community-search {
+    min-width: 0;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .community-complaint-card {
+    padding: 15px 16px;
+  }
+
+  .community-complaint-title {
+    font-size: 14px;
+    white-space: normal;
+  }
+
+  .community-complaint-dept {
+    white-space: normal;
+  }
+}
+
+/* ── SMALL PHONES ─────────────────────────────────────── */
+
+@media (max-width: 600px) {
+
+  .community-stats-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .community-stat-value {
+    font-size: 26px;
+  }
+
+  .community-complaint-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .community-complaint-right {
+    flex-direction: row;
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
