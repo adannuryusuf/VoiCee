@@ -6,6 +6,10 @@ The project is designed as a simple, accessible, and responsive web application 
 
 ---
 
+## Live Demo
+
+[Visit VoiCee](https://voiceekenya.netlify.app/)
+
 ## 1. Project Purpose
 
 The purpose of VoiCee is to provide citizens with a simple way to:
