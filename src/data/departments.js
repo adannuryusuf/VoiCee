@@ -1,6 +1,5 @@
-// Kenya Government Departments — National, County, Sub-County and Ward (MCA) Level
-// Covers all 47 counties across all service categories.
-
+// some sample Kenyan Government Departments 
+// 
 const COUNTY_LIST = [
   'Nairobi', 'Mombasa', 'Kwale', 'Kilifi', 'Tana River', 'Lamu', 'Taita Taveta',
   'Garissa', 'Wajir', 'Mandera', 'Marsabit', 'Isiolo', 'Meru', 'Tharaka Nithi',

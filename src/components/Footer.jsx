@@ -20,7 +20,7 @@ export default function Footer({ navigate }) {
                     >
                         <img
                             className="footer-logo-image"
-                            src="/voicee-logo.png"
+                            src="./voicee-logo.png"
                             alt="VoiCee"
                         />
                     </button>
